@@ -1,0 +1,278 @@
+body {
+    margin: 1.5em;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.hero-img {
+    background: url(../assets/home-img.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    filter: saturate(0);
+    animation: introLoad 2s forwards;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: introLoad 3s forwards;
+
+    span {
+        color: goldenrod;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    svg {
+        color: white;
+    }
+    .open-nav{
+        transform: translate(0);
+        animation: introLoad 2s forwards;
+    }
+    .material-symbols-outlined {
+        cursor: pointer;
+    }
+    
+}
+
+#Hero {
+    height: 90vh;
+    color: white;
+    animation: introLoad 6s forwards;
+    
+    h1 {
+        padding-top: 3.5em;
+        font-size: 2.3rem;
+    }
+    p {
+        font-size: 1.1rem;
+    }
+    svg {
+        margin-top: 3em;
+        color: goldenrod;
+        animation: moveArrow 1s alternate-reverse infinite;
+    }
+    span {
+        color: hsl(43, 74%, 49%);
+    }
+
+}
+
+#Explore {
+    img {
+        width: 100%;
+        filter: grayscale(4);
+    }
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        letter-spacing: 1px;
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width:920px) {
+
+    body {
+        margin: 3% 20%;
+    }
+    
+}
+
+@media only screen and (min-width: 921px) and (max-width:1199px) {
+
+    body {
+        margin: 3% 10%;
+    }
+    
+}
+
+@media only screen and (max-width: 600px){
+    #Explore {
+        .feature{
+            img {
+                width: 70%;
+            }
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 920px) {
+
+    .material-symbols-outlined {
+        z-index: 950;
+        position: fixed;
+        // left: 9.6rem;
+        // bottom: 1.2rem;
+        right: 1rem;
+        top: .5rem;
+        margin: 1rem;
+        font-size: 2rem;
+
+    }
+
+    .nav-item {
+        position: fixed;
+        right: 0;
+        top: 0;
+        background: goldenrod;
+        height: 100vh;
+        width: 50%;
+        z-index: 900;
+        transform: translateX(100%);
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 4rem;
+         
+            a {
+                color: black;
+                padding: .75rem 2rem;
+                display: block;
+            }
+            a:hover {
+                background: white;
+            }
+        }
+
+    }
+    
+}
+
+@media only screen and (min-width: 921px) {
+
+    body{
+        p{
+            font-size: 1.2rem;
+        }
+    }
+    header {
+
+        svg {
+            display: none;
+        }
+    }
+
+    .hero-img {
+        background: url(../assets/home-img.jpg);
+        background-size: cover;
+        width: 50%;
+        height: 80vh;
+        position: absolute;
+        left: 50%;
+        z-index: -1;
+        
+    }
+
+    .logo {
+        color: black;
+        font-size: 1.5rem;
+    }
+
+    #Hero {
+        color: black;
+        padding-right: 55%;
+        height: 80vh;
+
+        h1 {
+            padding-top: 7rem;
+        }
+
+        svg {
+            color: black;
+        }
+    }
+
+    .nav-item {
+         
+        .material-symbols-outlined {
+            display: none;
+        }
+    
+        ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+
+            a {
+                color: white;
+                padding: 0 1.5rem;
+
+                &:hover{
+                    // border-bottom: 1px solid  goldenrod;
+                    color:  #daa520;
+                }
+                
+            }
+        }
+    }
+
+    .feature {
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        margin-bottom: 6em;
+
+        .feature-para{
+            text-align: right;
+            margin-right: 20%;
+
+        }
+        
+        img {
+            width: 50%;
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 1200px){
+
+    .wrapper{
+        margin: 0 17%;
+    }
+    .hero-img{
+        height: 90vh;
+        width: 33%;
+    }
+    header {
+        margin-bottom: 10%;
+    }
+}
+
+
+@keyframes introLoad {
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+
+@keyframes moveArrow {
+    from{
+        transform: translateY(-30%);
+    }
+    to{
+        transform: translateY(60%);
+    }
+}

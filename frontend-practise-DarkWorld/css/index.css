@@ -1,0 +1,273 @@
+body {
+  margin: 1.5em;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.hero-img {
+  background: url(../assets/home-img.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-filter: saturate(0);
+          filter: saturate(0);
+  -webkit-animation: introLoad 2s forwards;
+          animation: introLoad 2s forwards;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  -webkit-animation: introLoad 3s forwards;
+          animation: introLoad 3s forwards;
+}
+
+.logo span {
+  color: goldenrod;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header svg {
+  color: white;
+}
+
+header .open-nav {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  -webkit-animation: introLoad 2s forwards;
+          animation: introLoad 2s forwards;
+}
+
+header .material-symbols-outlined {
+  cursor: pointer;
+}
+
+#Hero {
+  height: 90vh;
+  color: white;
+  -webkit-animation: introLoad 6s forwards;
+          animation: introLoad 6s forwards;
+}
+
+#Hero h1 {
+  padding-top: 3.5em;
+  font-size: 2.3rem;
+}
+
+#Hero p {
+  font-size: 1.1rem;
+}
+
+#Hero svg {
+  margin-top: 3em;
+  color: goldenrod;
+  animation: moveArrow 1s alternate-reverse infinite;
+}
+
+#Hero span {
+  color: #d9a520;
+}
+
+#Explore img {
+  width: 100%;
+  -webkit-filter: grayscale(4);
+          filter: grayscale(4);
+}
+
+#Explore h3 {
+  font-size: 1.3rem;
+}
+
+#Explore p {
+  letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 920px) {
+  body {
+    margin: 3% 20%;
+  }
+}
+
+@media only screen and (min-width: 921px) and (max-width: 1199px) {
+  body {
+    margin: 3% 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #Explore .feature img {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .material-symbols-outlined {
+    z-index: 950;
+    position: fixed;
+    right: 1rem;
+    top: .5rem;
+    margin: 1rem;
+    font-size: 2rem;
+  }
+  .nav-item {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: goldenrod;
+    height: 100vh;
+    width: 50%;
+    z-index: 900;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  .nav-item ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 4rem;
+  }
+  .nav-item ul a {
+    color: black;
+    padding: .75rem 2rem;
+    display: block;
+  }
+  .nav-item ul a:hover {
+    background: white;
+  }
+}
+
+@media only screen and (min-width: 921px) {
+  body p {
+    font-size: 1.2rem;
+  }
+  header svg {
+    display: none;
+  }
+  .hero-img {
+    background: url(../assets/home-img.jpg);
+    background-size: cover;
+    width: 50%;
+    height: 80vh;
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+  }
+  .logo {
+    color: black;
+    font-size: 1.5rem;
+  }
+  #Hero {
+    color: black;
+    padding-right: 55%;
+    height: 80vh;
+  }
+  #Hero h1 {
+    padding-top: 7rem;
+  }
+  #Hero svg {
+    color: black;
+  }
+  .nav-item .material-symbols-outlined {
+    display: none;
+  }
+  .nav-item ul {
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+  }
+  .nav-item ul a {
+    color: white;
+    padding: 0 1.5rem;
+  }
+  .nav-item ul a:hover {
+    color: #daa520;
+  }
+  .feature {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin-bottom: 6em;
+  }
+  .feature .feature-para {
+    text-align: right;
+    margin-right: 20%;
+  }
+  .feature img {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    margin: 0 17%;
+  }
+  .hero-img {
+    height: 90vh;
+    width: 33%;
+  }
+  header {
+    margin-bottom: 10%;
+  }
+}
+
+@-webkit-keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@-webkit-keyframes moveArrow {
+  from {
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%);
+  }
+  to {
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+  }
+}
+
+@keyframes moveArrow {
+  from {
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%);
+  }
+  to {
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+  }
+}
+/*# sourceMappingURL=index.css.map */
